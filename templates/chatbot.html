@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gemini AI Chatbot</title>
+</head>
+<body>
+
+<h1>Python AI Chatbot</h1>
+
+<form method="POST">
+    <input type="text" name="question" placeholder="Ask a Python question..." required>
+    <button type="submit">Ask</button>
+</form>
+
+{% if answer %}
+<hr>
+<h3>Answer:</h3>
+<p>{{ answer }}</p>
+{% endif %}
+
+<br>
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Welcome to Python Learning Portal</h1>
+
+<h2>Welcome, {{ username }} 👋</h2>
+
+<p>Login Successful!</p>
+
+<h3>Last Quiz Score: {{ score }}/10</h3>
+
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/quiz">Python Quiz</a></li>
+    <li><a href="/chatbot">AI Chatbot</a></li>
+    <li><a href="/logout">Logout</a></li>
+    <li><a href="/certificate">Download Certificate</a></li>
+</ul>
+
+</body>
+</html>
