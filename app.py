@@ -16,7 +16,7 @@ app.secret_key = "pythonportal123"
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return redirect(url_for("register"))
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -61,7 +61,7 @@ def register():
         conn.commit()
         conn.close()
 
-        return "Registration Successful!"
+        return redirect(url_for("login"))
 
     return render_template("register.html")
 
