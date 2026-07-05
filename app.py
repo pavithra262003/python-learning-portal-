@@ -8,7 +8,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from datetime import datetime
 
-client = genai.Client(api_key=os.getenv("GEMIMI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = Flask(__name__)
 app.secret_key = "pythonportal123"
