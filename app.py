@@ -16,7 +16,7 @@ app.secret_key = "pythonportal123"
 
 @app.route("/")
 def home():
-    return redirect(url_for("register"))
+    return render_template("home.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -88,7 +88,7 @@ def applications():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
-    
+
 
 @app.route("/chatbot", methods=["GET", "POST"])
 def chatbot():
