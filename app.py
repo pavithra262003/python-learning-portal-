@@ -73,6 +73,23 @@ def dashboard():
     return render_template("dashboard.html",username=username,score=score)
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/features")
+def features():
+    return render_template("features.html")
+
+@app.route("/applications")
+def applications():
+    return render_template("applications.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+    
+
 @app.route("/chatbot", methods=["GET", "POST"])
 def chatbot():
     answer = ""
