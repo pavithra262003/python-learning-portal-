@@ -313,7 +313,6 @@ Abstraction hides internal implementation details and shows only the important f
 
 </div>
 
-<hr>
 
 <div class="card">
 
@@ -353,16 +352,23 @@ Ask AI
 
 function showSection(section){
 
-let sections=document.getElementsByClassName("section");
+const sections=document.querySelectorAll(".section");
 
-for(let i=0;i<sections.length;i++){
-
-sections[i].style.display="none";
-
-}
+sections.forEach(function(item){
+    item.style.display="none";
+});
 
 document.getElementById(section).style.display="block";
 
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
+});
+
+}
+
+window.onload=function(){
+    showSection("about");
 }
 
 </script>
