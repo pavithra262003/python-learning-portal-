@@ -62,11 +62,39 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/dashboard")
+@app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
-    username=session.get("username","user")
-    score=session.get("score",0)
-    return render_template("dashboard.html",username=username,score=score)
+
+    answer = ""
+
+    if request.method == "POST":
+        question = request.form["question"]
+
+        prompt = f"""
+Answer this Python question in simple English.
+
+Rules:
+- Maximum 5 lines.
+- No *, **, # or markdown.
+- Give only plain text.
+- Keep the answer short and easy.
+
+Question:
+{question}
+"""
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+
+        answer = response.text.replace("*", "")
+
+    return render_template(
+        "dashboard.html",
+        username=session["username"],
+        answer=answer
+    )
 
 
 @app.route("/about")
