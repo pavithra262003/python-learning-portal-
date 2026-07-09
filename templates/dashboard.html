@@ -370,7 +370,13 @@ window.scrollTo({
 }
 
 window.onload=function(){
-    //showSection("{{ section }}");
+
+    let current = "{{ section }}";
+
+    if(current){
+        showSection(current);
+    }
+
 }
 
 
