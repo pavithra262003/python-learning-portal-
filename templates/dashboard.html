@@ -319,6 +319,7 @@ Abstraction hides internal implementation details and shows only the important f
 <h2>🤖 Ask AI Questions</h2>
 
 <form action="/dashboard" method="POST">
+<input type="hidden" name="section" id="currentSection" value="about">
 <input
 type="text"
 name="question"
@@ -359,6 +360,8 @@ sections.forEach(function(item){
 
 document.getElementById(section).style.display="block";
 
+document.getElementById("currentSection").value = section;
+
 window.scrollTo({
     top:0,
     behavior:"smooth"
@@ -367,7 +370,8 @@ window.scrollTo({
 }
 
 window.onload=function(){
-    showSection("about");
+    showSection("{{ section }}");
+}
 }
 
 </script>

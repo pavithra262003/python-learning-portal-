@@ -66,9 +66,11 @@ def register():
 def dashboard():
 
     answer = ""
+    section="about"
 
     if request.method == "POST":
         question = request.form["question"]
+        section=request.form["section"]
 
         prompt = f"""
 Answer this Python question in simple English.
@@ -94,6 +96,7 @@ Question:
         "dashboard.html",
         username=session["username"],
         answer=answer
+        section=section
     )
 
 
