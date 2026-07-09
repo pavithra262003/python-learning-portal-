@@ -1,12 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for,send_file,session
+from flask import Flask, render_template, request, redirect, url_for,session
 from google import genai
 import sqlite3
 import os
 
-
-from reportlab.platypus import SimpleDocTemplate, Paragraph
-from reportlab.lib.styles import getSampleStyleSheet
-from datetime import datetime
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
@@ -85,9 +81,10 @@ def features():
 def applications():
     return render_template("applications.html")
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+
+    @app.route("/oop")
+def oop():
+    return render_template("oop.html")
 
 
 @app.route("/chatbot", methods=["GET", "POST"])
@@ -106,60 +103,10 @@ def chatbot():
 
     return render_template("chatbot.html", answer=answer)
 
-@app.route("/quiz", methods=["GET", "POST"])
-def quiz():
-    score = None
-
-    if request.method == "POST":
-        score = 0
-
-        answers = {
-          "q1": "Guido van Rossum",
-          "q2": "def",
-          "q3": ".py",
-          "q4": "#",
-          "q5": "print()",
-          "q6": "[]",
-          "q7": "{}",
-          "q8": "for",
-          "q9": "Programming Language",
-          "q10": "()"
-        }
-
-        for question, answer in answers.items():
-           if request.form.get(question) == answer:
-              score += 1
-
-           if score is not None:
-               session["score"]=score
-
-    return render_template("quiz.html", score=score)
-
 
 @app.route("/logout")
 def logout():
     return redirect(url_for("home"))
-
-
-@app.route("/certificate")
-def certificate():
-    username = session.get("username", "User")
-    score = session.get("score", 0)
-
-    doc = SimpleDocTemplate("certificate.pdf")
-    styles = getSampleStyleSheet()
-
-    story = []
-
-    story.append(Paragraph("<b>Python Learning Portal</b>", styles["Title"]))
-    story.append(Paragraph("Certificate of Completion", styles["Heading1"]))
-    story.append(Paragraph(f"This certificate is proudly awarded to <b>{username}</b>", styles["Normal"]))
-    story.append(Paragraph(f"Quiz Score: <b>{score}/10</b>", styles["Normal"]))
-    story.append(Paragraph(f"Date: {datetime.now().strftime('%d-%m-%Y')}", styles["Normal"]))
-
-    doc.build(story)
-
-    return send_file("certificate.pdf", as_attachment=True)
     
 
 if __name__ == "__main__":

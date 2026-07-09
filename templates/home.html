@@ -1,7 +1,89 @@
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/features">Features</a>
-<a href="/applications">Applications</a>
-<a href="/contact">Contact</a>
-<a href="/register">Register</a>
-<a href="/login">Login</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Learning Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>🐍 PYTHON LEARNING PORTAL</h1>
+    <p>Learn Python from Beginner to Advanced with AI</p>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>📚 Learning Menu</h2>
+
+        <a href="/about">📖 About</a>
+        <a href="/features">⭐ Features</a>
+        <a href="/applications">💻 Applications</a>
+        <a href="/oop">🧩 OOP Concepts</a>
+
+        <div class="login-box">
+
+            <h3>🔐 Login</h3>
+
+            <a href="/login">
+                <button>Login</button>
+            </a>
+
+            <br><br>
+
+            <p>New User?</p>
+
+            <a href="/register">
+                Register Here
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <h2>Welcome to Python Learning Portal</h2>
+
+        <div class="card">
+            <h3>📘 Learn Python Easily</h3>
+            <p>
+                This portal helps beginners learn Python in a simple and interactive way.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 AI Assistant</h3>
+            <p>
+                Ask Python questions and get instant answers using Gemini AI.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Real World Applications</h3>
+            <p>
+                Learn Python for Web Development, AI, Data Science and Automation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🧩 OOP Concepts</h3>
+            <p>
+                Learn Class, Object, Inheritance, Polymorphism, Encapsulation and Abstraction.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+
+© 2026 Python Learning Portal | Flask | SQLite | Gemini AI
+
+</footer>
+
+</body>
+</html>

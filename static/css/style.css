@@ -1,50 +1,130 @@
-body{
-    font-family: Arial, sans-serif;
+*{
     margin:0;
-    background:#f4f8ff;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
 }
 
 header{
-    background:#306998;
+    background:#0d47a1;
     color:white;
-    text-align:center;
     padding:20px;
-}
-
-nav{
-    background:#FFD43B;
     text-align:center;
-    padding:12px;
 }
 
-nav a{
-    text-decoration:none;
-    color:black;
-    font-weight:bold;
-    margin:15px;
+header h1{
+    font-size:38px;
 }
 
-section{
-    padding:20px;
+header p{
+    margin-top:8px;
+    font-size:18px;
 }
 
-footer{
-    background:#306998;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
-}
-input, textarea{
-    width:80%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    margin-bottom:10px;
+.container{
+    width:95%;
+    margin:20px auto;
+    display:flex;
+    gap:20px;
 }
 
-form{
+.sidebar{
+    width:25%;
     background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    padding:20px;
+}
+
+.sidebar h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px;
+    margin-bottom:10px;
+    text-decoration:none;
+    background:#1976d2;
+    color:white;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#0d47a1;
+}
+
+.login-box{
+    margin-top:25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:#1e7e34;
+}
+
+.content{
+    width:75%;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.content h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.card{
+    background:#eef5ff;
+    border-left:5px solid #0d47a1;
+    padding:15px;
+    margin:15px 0;
+    border-radius:8px;
+}
+
+.ai-box{
+    margin-top:30px;
+    background:#f1fff1;
     padding:20px;
     border-radius:10px;
+    border:2px solid green;
+}
+
+.ai-box input{
+    width:80%;
+    padding:10px;
+    border-radius:6px;
+}
+
+.ai-box button{
+    padding:10px 20px;
+    background:#0d47a1;
+    color:white;
+    border:none;
+    border-radius:6px;
 }

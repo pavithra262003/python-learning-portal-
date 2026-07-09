@@ -1,26 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Python Learning Portal</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<h1>Welcome to Python Learning Portal</h1>
+<header>
+    <h1>🐍 PYTHON LEARNING PORTAL</h1>
+    <p>Welcome, {{ username }} 👋</p>
+</header>
 
-<h2>Welcome, {{ username }} 👋</h2>
+<div class="container">
 
-<p>Login Successful!</p>
+    <div class="sidebar">
 
-<h3>Last Quiz Score: {{ score }}/10</h3>
+        <h2>📚 Learning Menu</h2>
 
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/quiz">Python Quiz</a></li>
-    <li><a href="/chatbot">AI Chatbot</a></li>
-    <li><a href="/logout">Logout</a></li>
-    <li><a href="/certificate">Download Certificate</a></li>
-</ul>
+        <a href="#" onclick="showContent('about')">📖 About</a>
+
+        <a href="#" onclick="showContent('features')">⭐ Features</a>
+
+        <a href="#" onclick="showContent('applications')">💻 Applications</a>
+
+        <a href="#" onclick="showContent('oop')">🧩 OOP Concepts</a>
+
+        <br>
+
+        <a href="/logout">🚪 Logout</a>
+
+    </div>
+
+    <div class="content">
+
+        <div id="about">
+
+            <h2>About Python</h2>
+
+            <div class="card">
+                <h3>Introduction</h3>
+
+                <p>
+Python is a high-level programming language that is easy to learn and widely used in Web Development, Artificial Intelligence, Data Science and Automation.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="features" style="display:none;">
+
+            <h2>Python Features</h2>
+
+            <div class="card">
+
+                <h3>Easy to Learn</h3>
+
+                <p>
+Python syntax is simple and beginner friendly.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="applications" style="display:none;">
+
+            <h2>Applications</h2>
+
+            <div class="card">
+
+                <h3>Web Development</h3>
+
+                <p>
+Python is used for Flask and Django web applications.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="oop" style="display:none;">
+
+            <h2>OOP Concepts</h2>
+
+            <div class="card">
+
+                <h3>Class</h3>
+
+                <p>
+A class is a blueprint for creating objects.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="ai-box">
+
+            <h3>🤖 Ask AI Questions</h3>
+
+            <form action="/chatbot" method="POST">
+
+                <input
+                type="text"
+                name="question"
+                placeholder="Ask any Python Question">
+
+                <button type="submit">
+                    Ask
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function showContent(page){
+
+document.getElementById("about").style.display="none";
+
+document.getElementById("features").style.display="none";
+
+document.getElementById("applications").style.display="none";
+
+document.getElementById("oop").style.display="none";
+
+document.getElementById(page).style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
