@@ -95,7 +95,7 @@ Question:
     return render_template(
         "dashboard.html",
         username=session["username"],
-        answer=answer
+        answer=answer,
         section=section
     )
 
