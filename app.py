@@ -82,7 +82,7 @@ def applications():
     return render_template("applications.html")
 
 
-    @app.route("/oop")
+@app.route("/oop")
 def oop():
     return render_template("oop.html")
 
