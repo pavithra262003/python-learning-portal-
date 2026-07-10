@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Python Learning Portal</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🐍 PYTHON LEARNING PORTAL</h1>
+
+<p>Welcome, {{ username }} 👋</p>
+
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Learning Menu</h2>
+
+<button onclick="showSection('about')">
+📖 About Python
+</button>
+
+<button onclick="showSection('features')">
+⭐ Python Features
+</button>
+
+<button onclick="showSection('applications')">
+💻 Applications
+</button>
+
+<button onclick="showSection('oop')">
+🧩 OOP Concepts
+</button>
+
+<br><br>
+
+<a href="/logout">
+
+<button>
+
+🚪 Logout
+
+</button>
+
+</a>
+
+</div>
+
+<div class="content">
+
+<div id="about" class="section">
+
+<h2>📖 About Python</h2>
+
+<div class="card">
+
+<h3>Introduction</h3>
+
+<p>
+
+Python is a high-level, interpreted programming language.
+It is simple, powerful and easy to learn.
+Python is used in Web Development,
+Artificial Intelligence,
+Machine Learning,
+Data Science,
+Automation,
+Game Development and many more fields.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Advantages</h3>
+
+<ul>
+
+<li><b>Easy to Learn</b><br>
+Python syntax is simple and beginner friendly.</li>
+
+<li><b>Open Source</b><br>
+Python is free to download and use.</li>
+
+<li><b>Platform Independent</b><br>
+Runs on Windows, Linux and macOS.</li>
+
+<li><b>Large Community</b><br>
+Millions of developers use Python worldwide.</li>
+
+<li><b>High Level Language</b><br>
+Less code, more productivity.</li>
+
+</ul>
+
+</div>
+<div class="card">
+
+<h3>Why Learn Python?</h3>
+
+<p>
+
+Python is one of the most popular programming languages in the world.
+It is widely used by students, software companies and researchers because it is simple, powerful and versatile.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- FEATURES -->
+
+<div id="features" class="section" style="display:none;">
+
+<h2>⭐ Python Features</h2>
+
+<div class="card">
+
+<h3>Easy to Learn</h3>
+
+<p>
+Python has a clean and readable syntax which makes learning easy.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Open Source</h3>
+
+<p>
+Python is completely free. Anyone can download and modify it.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Platform Independent</h3>
+
+<p>
+Python code runs on Windows, Linux and macOS without major changes.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Object Oriented</h3>
+
+<p>
+Python supports Class, Object, Inheritance, Polymorphism, Encapsulation and Abstraction.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Large Standard Library</h3>
+
+<p>
+Python provides thousands of built-in libraries for web development, AI, data science and automation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Fast Development</h3>
+
+<p>
+Python requires fewer lines of code compared to many programming languages.
+</p>
+
+</div>
+
+</div>
+
+<!-- APPLICATIONS -->
+
+<div id="applications" class="section" style="display:none;">
+
+<h2>💻 Python Applications</h2>
+
+<div class="card">
+
+<h3>Web Development</h3>
+
+<p>
+Frameworks like Flask and Django are used to create websites and web applications.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+Python is the most popular language for AI and Machine Learning projects.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Data Science</h3>
+
+<p>
+Used for data analysis, visualization and big data processing.
+</p>
+
+</div>
+<div class="card">
+
+<h3>Automation</h3>
+
+<p>
+Python automates repetitive tasks like file handling, emails and data processing.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Game Development</h3>
+
+<p>
+Games can be developed using the Pygame library.
+</p>
+
+</div>
+
+</div>
+
+<!-- OOP -->
+
+<div id="oop" class="section" style="display:none;">
+
+<h2>🧩 OOP Concepts</h2>
+
+<div class="card">
+
+<h3>Class</h3>
+
+<p>
+A class is a blueprint used to create objects.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Object</h3>
+
+<p>
+An object is an instance of a class.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Inheritance</h3>
+
+<p>
+Inheritance allows one class to inherit the properties and methods of another class.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Polymorphism</h3>
+
+<p>
+Polymorphism means one method can perform different tasks.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Encapsulation</h3>
+
+<p>
+Encapsulation combines data and methods into a single unit.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Abstraction</h3>
+
+<p>
+Abstraction hides internal implementation details and shows only the important features.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🤖 Ask AI Questions</h2>
+
+<form action="/dashboard" method="POST">
+<input type="hidden" name="section" id="currentSection" value="about">
+<input
+type="text"
+name="question"
+placeholder="Ask any Python question..."
+required>
+
+<button type="submit">
+Ask AI
+</button>
+
+</form>
+
+{% if answer %}
+
+<hr>
+
+<h3>AI Answer</h3>
+
+<p>{{ answer }}</p>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showSection(section){
+
+const sections=document.querySelectorAll(".section");
+
+sections.forEach(function(item){
+    item.style.display="none";
+});
+
+document.getElementById(section).style.display="block";
+
+document.getElementById("currentSection").value = section;
+
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
+});
+
+}
+
+window.onload=function(){
+
+    let current = "{{ section }}";
+
+    if(current){
+        showSection(current);
+    }
+
+}
+
+
+</script>
+
+</body>
+
+</html>
