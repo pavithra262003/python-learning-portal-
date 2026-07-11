@@ -10,12 +10,9 @@ app = Flask(__name__)
 app.secret_key = "pythonportal123"
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
-
-    return render_template(
-        "home.html"
-    )
+    return render_template("index.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
